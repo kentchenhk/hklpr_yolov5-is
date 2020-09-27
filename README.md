@@ -1,3 +1,35 @@
+## HKLPR by yolov5
+YOLOV5 are used for detection and recognition.
+* Step1: Install Requirements.
+```bash
+$ pip install -r requirements.txt
+```
+* Step2: Change input and output directory in run_lp_detect_recog.py, then run
+```bash
+$ python run_lp_detect_recog.py
+```
+
+## Retraining
+Pretrained weights are put under `./weights/yolov5s_detect.pt` and `./weights/yolov5s_recog.pt`.
+To retrain, check [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data).
+* Detection training data is manually labeled through tools CVAT. A handful of the labelled data is put into the cloud.
+* Recognition data is synthesized by the codes entitled LPGenerator. Please check the README there.
+After preparing the data, run `python train_lpdetect.py` and `python train_lprecog.py`.
+
+## TODO list
+* Do more detection data labeling and retrain a better detection network. Current pretrained detection model are trained using a small dataset.
+* Label some real lp characters for recognition and fine-tune a better recognition network.
+* Check different augmentation ways and find better hyper-parameters to generate a more diverse recognition dataset similar to real lps.
+* The synthesized recognition dataset may provided a wrong labelling. A data cleaning process may be needed (checking the hard cases or wrong predictions by a pretrained network).
+* Choose proper iou and conf to make sure the precision and recall are all good during both training and detection.
+* Develop codes for recognition evaluation. The current recognition evaluation is performed to check each bounding box for each characters. But after sorting all characters in a lp, a string e.g. AB1234 is produced. A evaluation code is in need to check whether AB1234 is correct. This evaluation codes is also good for benchmarking with other works.
+* Work with Alvin to deploy the model on raspberry pi.
+* Work with Alvin, and explore using a camera which can work at night with low light, collect some datasets at night, combine it with dataset during the day and then retrain the detection network.
+* Introduce a super light-weight super-resolution subnet and co-train with the existing recognition model. More details can be found on the white paper send you before. This is mainly for exploiting more novelty of the system.
+* Work with Alvin to Write a paper of the overall system.
+
+
+## Original README.ME below
 <a href="https://apps.apple.com/app/id1452689527" target="_blank">
 <img src="https://user-images.githubusercontent.com/26833433/82944393-f7644d80-9f4f-11ea-8b87-1a5b04f555f1.jpg" width="1000"></a>
 &nbsp

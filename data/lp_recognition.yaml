@@ -1,0 +1,27 @@
+# COCO 2017 dataset http://cocodataset.org
+# Train command: python train.py --data coco.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /coco
+#     /yolov5
+
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: /home/jrchan/data/LPR_datasets/hklp_recog_syn_dataset_large/train/images
+val: /home/jrchan/data/LPR_datasets/hklp_recog_syn_dataset_large/valid/images
+test: /home/jrchan/data/LPR_datasets/hklp_recog_syn_dataset_large/test/images
+
+# number of classes
+nc: 33
+
+# class names
+names: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
+        'L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W',
+        'X', 'Y', 'Z']  # digits should be put at the first place
+
+# Print classes
+# with open('data/coco.yaml') as f:
+#   d = yaml.load(f, Loader=yaml.FullLoader)  # dict
+#   for i, x in enumerate(d['names']):
+#     print(i, x)
