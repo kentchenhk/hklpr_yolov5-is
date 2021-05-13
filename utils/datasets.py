@@ -439,6 +439,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                 if extract_bounding_boxes:
                     p = Path(self.img_files[i])
                     img = cv2.imread(str(p))
+
                     h, w = img.shape[:2]
                     for j, x in enumerate(l):
                         f = '%s%sclassifier%s%g_%g_%s' % (p.parent.parent, os.sep, os.sep, x[0], j, p.name)
@@ -610,6 +611,7 @@ def load_image(self, index):
     if img is None:  # not cached
         path = self.img_files[index]
         img = cv2.imread(path)  # BGR
+
         assert img is not None, 'Image Not Found ' + path
         h0, w0 = img.shape[:2]  # orig hw
         r = self.img_size / max(h0, w0)  # resize image to img_size

@@ -1,14 +1,9 @@
-# COCO 2017 dataset http://cocodataset.org
-# Train command: python train.py --data coco.yaml
-# Default dataset location is next to /yolov5:
-#   /parent_folder
-#     /coco
-#     /yolov5
-
-
 # train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
-train: /home/jrchan/data/LPR_datasets/hklp_detection_small/train/images
-val: /home/jrchan/data/LPR_datasets/hklp_detection_small/valid/images
+#train: /home/jrchan/data/LPR_datasets/hklp_detection_small/train/images
+#val: /home/jrchan/data/LPR_datasets/hklp_detection_small/valid/images
+train: /home/jrchan/data/LPR_datasets/hklp_mtr_detect/train/images
+val: /home/jrchan/data/LPR_datasets/hklp_mtr_detect/valid/images
+test: /home/jrchan/data/LPR_datasets/hklp_mtr_detect/test/images
 
 # number of classes
 nc: 2
