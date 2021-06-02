@@ -26,20 +26,9 @@
 """for mtr lpr with front lp only"""
 import os
 
-# dir_name = 'iphone1_exit'
-# dir_name = 'iphone0_entrance'
-# dir_name = 'samsung0_entrance'
-# dir_name = 'official_test'
-# dir_name = 'official_test/20210508_1_edit.mp4'
-# dir_name = 'official_test/20210508_2_edit.mp4'
-# dir_name = 'official_test/20210508_3_edit.mp4'
-# dir_name = 'official_test/20210508_3_edit_edit.mp4'
-# dir_name = 'official_test/20210508_4_edit.mp4'
-# dir_name = 'official_test/20210509_1_edit.mp4'
-# dir_name = 'official_test/20210509_2_edit.mp4'
+
 dir_name = 'official_test/20210510_1_edit.mp4'
-# dir_name = 'official_test/20210508_all.mp4'
-# dir_name = 'official_test/20210509_all.mp4'
+
 
 # dir_name = 'single'
 input_videos = '/home/jrchan/data/LPR_datasets/mtr/input/' + dir_name
@@ -49,17 +38,14 @@ output_dir = '/home/jrchan/data/LPR_datasets/mtr/output/' + dir_name
 device = '0'
 
 iou_detect = 0.3
-conf_detect = 0.7   # Should be higher
+conf_detect = 0.7   # Should be high
 img_size_detect = 640
-weights_file_detect = 'weights/yolov5s_mtr_detect_416.pt'
+weights_file_detect = 'weights/yolov5s_mtr_detect_640.pt'
 
-iou_recog = 0.2     # Should be lower
-# conf_recog = 0.65    # Should be higher
-conf_recog = 0.65    # Should be higher
-img_size_recog = 416
-# weights_file_recog = 'weights/yolov5s_mtr_recog_416.pt'
-# weights_file_recog = 'runs/exp53_yolov5s_lprecog_results/weights/best.pt'
-weights_file_recog = 'runs/exp75_yolov5s_lprecog_results/weights/best.pt'
+iou_recog = 0.2     # Should be low
+conf_recog = 0.65    # Should be high
+img_size_recog = 416    # when changed, re-training is required
+weights_file_recog = 'weights/yolov5s_mtr_recog_416.pt'
 
 
 # Detect and recog
