@@ -1,0 +1,30 @@
+# data
+# dir_name: 'iphone0_entrance/IMG_0037.MOV' # you can add the path of video/image/folder of videos and/or images
+dir_name: 'test.png'  # *If using rtsp, only change the dir_anme as the address of rtsp stream.
+input_dir: '/home/xiaodong/xiaodong/Data/LPR_datasets/mtr/input/' 
+output_dir: '/home/xiaodong/xiaodong/Data/LPR_datasets/mtr/output/'
+device: '1'
+
+# model hyper-parameters
+iou_detect: 0.3
+conf_detect: 0.7   # Should be high
+img_size_detect: 640
+weights_file_detect: 'weights/yolov5s_mtr_detect_640.pt'
+classes_detect: null
+
+iou_recog: 0.2     # Should be low
+conf_recog: 0.65    # Should be high
+img_size_recog: 416    # when changed, re-training is required
+weights_file_recog: 'weights/yolov5s_mtr_recog_416.pt'
+classes_recog: null
+
+# util
+view_img: False
+save_txt: True
+agnostic_nms: False
+augment: False
+day_light: False
+
+# timestamp
+start_timming: "2021-06-03 14:00:00" # *Set as the start time of the video. If start_timming is null, it will use the current Beijing time.
+default_fps: 30
